@@ -12,6 +12,15 @@ class ProductsController < ApplicationController
   end
 
   def create
+    @product = Product.new(product_params)
+    
+    respond_to do |format|
+      if @product.save
+        format.json { render json: @product }
+      else
+        format.json { render json: @product.errors }
+      end
+    end
   end
 
   def edit
@@ -22,6 +31,10 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    respond_to do |format|
+      format.html #new.haml
+      format.json { render json: @product }
+    end
   end
 
   def destroy
@@ -35,4 +48,10 @@ class ProductsController < ApplicationController
       redirect_to products_path
     end
   end
+  
+  private
+    def product_params
+      params.require(:product).permit(:name, :value)
+    end
+
 end

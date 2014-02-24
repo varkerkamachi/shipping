@@ -3,13 +3,28 @@
   %head
     %title="Product Catalog"
     %meta{ :name => "Charset", :content => "UTF-8" }
-    %meta{ :name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=2.0; user-scalable=1;" }
-    =stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", "application", media: "all", "data-turbolinks-track" => true
+    %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=1;" }
+    =stylesheet_link_tag "application", "bootstrap", "bootstrap-responsive", media: "all", "data-turbolinks-track" => true
     =javascript_include_tag "application", "data-turbolinks-track" => true
     =csrf_meta_tags
     %noscript="You must enable JavaScript to view this website"
 
-  %body
-    #application
-      =yield
+  %body{"data-no-turbolink" => true}
+    .container-narrow
+      .masthead
+        %ul.nav-pills.pull-right
+          %li.active
+            =link_to "Home", root_path
+            =link_to "Products", products_path
+            
+        %h3.muted
+          Product Catalog
+      .row-fluid.marketing
+        #application
+          =yield
+
+      %hr
+      .footer
+        %p
+          &copy; 2014 - Backbone Backbone Backbone
     

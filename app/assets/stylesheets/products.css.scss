@@ -1,3 +1,33 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.product-row {
+  border:1px solid #dededc;
+  padding:12px 10px;
+  margin:2px 0 1px;
+  border-top-color:#efefef;
+  transition:border-color .8s 0,
+  background-color .5s 0;
+  border-radius:4px;
+  
+  &:hover {
+    border-color:#9abafe;
+    background-color:#dededc;
+    cursor:pointer;
+    }
+}
+.row-fluid [class*="span"] {
+  margin-left:0;
+}
+
+/* form */
+#add_product {
+  margin-bottom:10px;
+  padding-left:8px;
+}
+
+form label.control-label {
+  vertical-align:center;
+  line-height:15px;
+}

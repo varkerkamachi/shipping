@@ -1,3 +1,4 @@
-%li
-  =@product.get 'name'
-  %a.delete_link=" < delete"
+=@product.get 'name'
+%a.delete_link.pull-right
+  delete
+  %i.icon-trash

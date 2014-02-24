@@ -1,4 +1,6 @@
-%label="Add product: "
-  %input#add_product
-  
-%ul#prodlist
+%form.pull-right.clearfix
+  %label.control-label="Add product: "
+    %input.product_name{type: 'text'}
+    %button#add_product.btn{type: 'submit'}="Add product"
+%br
+%ul#prodlist.clearfix
