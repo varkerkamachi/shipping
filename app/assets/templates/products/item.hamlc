@@ -1,4 +1,5 @@
-=@product.get 'name'
+%span.product_name
+  =@product.get 'name'
 %a.delete_link.pull-right
   delete
   %i.icon-trash

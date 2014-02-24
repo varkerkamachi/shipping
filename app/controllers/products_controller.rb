@@ -24,9 +24,18 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find_by_id(params[:id])
   end
 
   def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      flash[:notice] = "#{@product.name} updated"
+      redirect_to products_path
+    else
+      flash[:error] = "Could not update product"
+      redirect_to products_path
+    end
   end
 
   def new

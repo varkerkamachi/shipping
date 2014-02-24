@@ -4,6 +4,7 @@ class Shipping.Views.ProductsItem extends Backbone.View
   template: JST['products/item']
   events:
     'click a.delete_link' : 'deleteProduct'
+    'click span.product_name' : 'editProduct'
 
   initialize: ->
     @model.bind 'destroy', @remove, @
@@ -14,3 +15,9 @@ class Shipping.Views.ProductsItem extends Backbone.View
 
   deleteProduct: ->
     @model.destroy()
+
+  editProduct: ->
+    console.log @model, "name: ", @model.attributes.name
+    view = new  Shipping.Views.ProductEdit model: @model
+    @$('#edit_area').append(view.render().el)
+    @

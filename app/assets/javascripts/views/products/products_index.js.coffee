@@ -17,10 +17,8 @@ class Shipping.Views.ProductsIndex extends Backbone.View
     @
 
   createProduct: (e) ->
-    #return if e.keyCode != 13
     @collection.create name: @$('.product_name').val()
     @$('.product_name').val('')
-		console.log "added"
 
 
   addProduct: (product) ->
