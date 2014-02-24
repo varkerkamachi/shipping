@@ -1,0 +1,15 @@
+!!! html
+%html
+  %head
+    %title="Product Catalog"
+    %meta{ :name => "Charset", :content => "UTF-8" }
+    %meta{ :name => "viewport", :content => "width=device-width; initial-scale=1.0; maximum-scale=2.0; user-scalable=1;" }
+    =stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", "application", media: "all", "data-turbolinks-track" => true
+    =javascript_include_tag "application", "data-turbolinks-track" => true
+    =csrf_meta_tags
+    %noscript="You must enable JavaScript to view this website"
+
+  %body
+    #application
+      =yield
+    

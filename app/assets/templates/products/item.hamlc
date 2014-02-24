@@ -1,0 +1,3 @@
+%li
+  =@product.get 'name'
+  %a.delete_link=" < delete"
