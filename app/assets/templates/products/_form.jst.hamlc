@@ -1,0 +1,41 @@
+%form.clearfix.product_form
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product name: "
+    .span8
+      %input.product_name{type: 'text', value: "#{@model.get('name')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product description: "
+    .span8
+      %textarea= if @model.get('description') then "#{@model.get('description')}" else ""
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product width: "
+    .span8
+      %input.product_width{type: "text", value: "#{@model.get('width')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product length: "
+    .span8
+      %input.product_length{type: "text", value: "#{@model.get('length')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product height: "
+    .span8
+      %input.product_height{type: "text", value: "#{@model.get('height')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product weight: "
+    .span8
+      %input.product_weight{type: "text", value: "#{@model.get('weight')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label="Product value: ($)"
+    .span8
+      %input.product_value{type: "text", value: "#{@model.get('value')}"}
+  .span12.clearfix
+    .span4.text-right
+      %label.control-label
+    .span8.text-right
+      %button{type: "submit", value: "update", id: "submittor", class: "btn"}="Save"

@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#application {
+  position:relative;
+  z-index:1;
+}
+
 .product-row {
   border:1px solid #dededc;
   padding:12px 10px;
@@ -21,8 +26,16 @@
   margin-left:0;
 }
 
-.add_product_form {
+.add_product_form_area {
   display:none;
+  z-index:2;
+  border:1px dotted #bcbcbc;
+  padding:15px 5px 5px;
+  border-bottom:1px solid #bcbcbc;
+  background:#efefef;
+  box-shadow:0 1px 2px #cdcdcd inset;
+  -moz-box-shadow:0 1px 2px #cdcdcd inset;
+  -webkit-box-shadow:0 1px 2px #cdcdcd inset;
 }
 /* form */
 #add_product {
@@ -30,12 +43,18 @@
   padding-left:8px;
 }
 
-form label.control-label {
+label.control-label {
   vertical-align:center;
   line-height:15px;
+  text-shadow:0 1px 0 #fcfcfc;
+  &.add_trigger {
+    position:absolute;
+    top:-15px;
+    right:0;
+  }
 }
 
-form.edit_form {
+form.product_form {
   .text-right label {
     padding-right:15px;
   }
@@ -43,5 +62,6 @@ form.edit_form {
   textarea,
   select {
     width:95%;
+    padding:6px 4px;
   }
 }

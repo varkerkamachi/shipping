@@ -17,7 +17,7 @@ class Shipping.Views.ProductsItem extends Backbone.View
     @model.destroy()
 
   editProduct: ->
-    console.log @model, "name: ", @model.attributes.name
+    # console.log @model, "name: ", @model.attributes.name
     view = new  Shipping.Views.ProductEdit model: @model
     @$('#edit_area').append(view.render().el)
     @

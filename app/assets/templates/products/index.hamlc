@@ -1,6 +1,7 @@
-%form.pull-right.clearfix
-  %label.control-label="Add product: "
-    %input.product_name{type: 'text'}
-    %button#add_product.btn{type: 'submit'}="Add product"
+.pull-right.clearfix
+  %label.control-label.add_trigger="Add a new product"
+  %br
+    .add_product_form_area
+      != JST['products/_form'](model: new Shipping.Models.Product)
 %br
 %ul#prodlist.clearfix
