@@ -6,7 +6,7 @@
 development:
   adapter: postgresql
   host: localhost
-  user: root
+  # user: root
   password:
   database: db/shipping_development
   pool: 5
@@ -18,7 +18,7 @@ development:
 test:
   adapter: postgresql
   host: localhost
-  user: root
+  # user: root
   password:
   database: db/shipping_test
   pool: 5
@@ -27,7 +27,7 @@ test:
 production:
   adapter: postgresql
   host: localhost
-  user: root
+  # user: root
   password: root
   database: db/shipping_production
   pool: 5
