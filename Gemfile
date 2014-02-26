@@ -9,7 +9,8 @@ gem 'execjs'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
-gem 'mysql2'
+# gem 'mysql2'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 gem 'backbone-on-rails'
@@ -44,6 +45,10 @@ group :test, :development do
   gem 'capybara'
   # gem 'guard-jasmine'
   # gem 'jasminerice'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password
