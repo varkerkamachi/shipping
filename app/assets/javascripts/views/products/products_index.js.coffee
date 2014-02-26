@@ -1,6 +1,8 @@
 class Shipping.Views.ProductsIndex extends Backbone.View
   el: "#application"
+  formEl: "form.product_form"
   template: JST['products/index']
+  model: Shipping.Views.Product
   events:
     'click label.add_trigger.control-label' : 'toggleAddForm'
     'click #submittor': 'createProduct'
@@ -16,12 +18,11 @@ class Shipping.Views.ProductsIndex extends Backbone.View
       @$('#prodlist').append(view.render().el)
     @
 
-  createProduct: (e) ->
-    @collection.create name: @$('.product_name').val()
+  createProduct: ->
+    @collection.create @fetchData()
     @toggleAddForm()
 
-  toggleAddForm: (e) ->
-    e.preventDefault
+  toggleAddForm: ->
     frmarea = $(@el).find('.add_product_form_area')
     frmarea.slideToggle()
     
@@ -29,3 +30,14 @@ class Shipping.Views.ProductsIndex extends Backbone.View
     view = new Shipping.Views.ProductsItem model: product
     @$('#prodlist').append(view.render().el)
     @
+
+  fetchData: ->
+    data = {
+      name: $('.product_name').val(),
+      description: $('textarea').val(),
+      width: $('.product_width').val(),
+      height: $('.product_height').val(),
+      length: $('.product_length').val(),
+      weight: $('.product_weight').val(),
+      value: $('.product_value').val()
+    }
